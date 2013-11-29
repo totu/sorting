@@ -48,3 +48,5 @@ function merge(a)
   merge_sort(array);
   return a
 }
+
+merge([1,3,2]);

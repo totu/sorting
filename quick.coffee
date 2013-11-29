@@ -1,9 +1,9 @@
-swap = (arr, firstIndex, secondIndex) ->
+exports.swap = (arr, firstIndex, secondIndex) ->
   temp = arr[firstIndex]
   arr[firstIndex] = arr[secondIndex]
   arr[secondIndex] = temp
 
-partition = (arr, left, right) ->
+exports.partition = (arr, left, right) ->
   pivot = arr[Math.floor((right + left) / 2)]
   i = left
   j = right
@@ -14,12 +14,12 @@ partition = (arr, left, right) ->
     while arr[j] > pivot
       j--
     if i <= j
-      swap arr, i, j
+      this.swap arr, i, j
       i++
       j--
   return i
 
-quick = (arr, left, right) ->
+exports.sort = (arr, left, right) ->
   if (arr.length > 1)
 
     if typeof left != "number"
@@ -27,16 +27,16 @@ quick = (arr, left, right) ->
     if typeof right != "number"
       right = arr.length-1
 
-    index = partition arr, left, right
+    index = this.partition arr, left, right
 
     if left < index-1
-      quick arr, left, index-1
+      this.sort arr, left, index-1
 
     if index < right
-      quick arr, index, right
+      this.sort arr, index, right
 
   return arr
 
 
-console.log quick [1,5,2,4,3]
-console.log quick [1,2,3,4]
+#console.log quick [1,5,2,4,3]
+#console.log quick [1,2,3,4]

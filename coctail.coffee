@@ -1,7 +1,7 @@
 Array.prototype.move = (f,t) ->
   this.splice(t, 0, this.splice(f, 1)[0])
 
-coctail = (arr) ->
+exports.sort = (arr) ->
   swapped = true
   while swapped
     swapped = false
@@ -17,5 +17,5 @@ coctail = (arr) ->
         swapped = true
   return arr
 
-console.log(coctail([1,3,5,6]))
-console.log(coctail([1,2,3,4]))
+#console.log(coctail([1,3,5,6]))
+#console.log(coctail([1,2,3,4]))

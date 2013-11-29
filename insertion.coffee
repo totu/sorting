@@ -1,7 +1,7 @@
 Array.prototype.move = (f,t) ->
   this.splice(t, 0, this.splice(f, 1)[0])
 
-insertion = (arr) ->
+exports.sort = (arr) ->
   res = arr
   for i in [1..arr.length-1]
     val = arr[i]
@@ -12,5 +12,5 @@ insertion = (arr) ->
   res[pos] = val
   return res
 
-console.log insertion [1,5,3,9,2]
-console.log insertion [1,2,3,4]
+#console.log insertion [1,5,3,9,2]
+#console.log insertion [1,2,3,4]
